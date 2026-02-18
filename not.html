@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>น็อตชอบนีมส์ 💕</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: linear-gradient(135deg, #ffb6d9, #ffc0cb, #ff99cc);
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 60px;
+        color: white;
+        text-shadow: 3px 3px 10px #ff4da6;
+        animation: bounce 1s infinite alternate;
+        z-index: 10;
+    }
+
+    @keyframes bounce {
+        from { transform: translateY(0px); }
+        to { transform: translateY(-20px); }
+    }
+
+    .heart {
+        position: absolute;
+        color: #ff4da6;
+        font-size: 30px;
+        animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(100vh) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-10vh) scale(1.5);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>💖 น็อตชอบนีมส์ 💖</h1>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 30) + "px";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
